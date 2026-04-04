@@ -1,4 +1,4 @@
-// Primer método: petición a la API para obtener el json de datos
+// Petición a la API para obtener el json de datos
 const fetchEquipos = async (nombreEquipo) => {
     const url = `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${nombreEquipo}`;
     const result = await fetch(url);
@@ -8,7 +8,7 @@ const fetchEquipos = async (nombreEquipo) => {
     printEquipos(data.teams);
 }
 
-// Segundo método: llevar los datos de la api al html usando el DOM
+// Llevar los datos de la api al HTML usando el DOM
 const printEquipos = (equipos) => {
   console.log('equipos en printEquipos() --->', equipos);
 
@@ -72,4 +72,25 @@ buscador.addEventListener('keydown', (event) => {
 });
 
 // Carga inicial
-fetchEquipos('Barcelona');
+const cargaInicial = async () => {
+    const equiposIniciales = ['Real Zaragoza', 'Barcelona', 'Arsenal', 'Milan'];
+
+    let todosEquipos = [];
+
+    for (let nombre of equiposIniciales) {
+        const url = `https://www.thesportsdb.com/api/v1/json/3/searchteams.php?t=${nombre}`;
+
+        const result = await fetch(url);
+        const data = await result.json();
+
+        if (data.teams) {
+            todosEquipos = todosEquipos.concat(data.teams);
+        }
+    }
+
+    console.log('equipos iniciales --->', todosEquipos);
+
+    printEquipos(todosEquipos);
+}
+
+cargaInicial();
