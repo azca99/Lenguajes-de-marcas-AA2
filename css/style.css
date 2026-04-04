@@ -80,3 +80,19 @@ body {
 .tarjeta-enlace:hover {
     text-decoration: underline;
 }
+
+.tarjeta-img {
+    width: 100px;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.tarjeta-titulo {
+    margin-bottom: 10px;
+    color: #228B22;
+    text-align: center;
+}
+
+.tarjeta-texto {
+    margin-bottom: 6px;
+}
