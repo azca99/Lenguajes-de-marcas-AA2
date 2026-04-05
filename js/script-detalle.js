@@ -11,19 +11,23 @@ window.addEventListener('DOMContentLoaded', () => {
   let params = new URLSearchParams(document.location.search);
   let id = params.get("id");
 
-  if (id) {
+  if (id != undefined) {
     getCocktail(id);
   }
 
   const createDetail = (cocktail) => {
-    const contenedor = document.querySelector('#bebida_detail');
+    const contenedor = document.querySelector('#bebida_detalle');
 
     const {
       strDrink,
       strDrinkThumb,
       strCategory,
       strAlcoholic,
-      strInstructions
+      strGlass,
+      strInstructions,
+      strIngredient1,
+      strIngredient2,
+      strIngredient3,
     } = cocktail;
 
     const card = document.createElement('div');
@@ -32,9 +36,11 @@ window.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
       <img src="${strDrinkThumb}" class="detalle-img"/>
       <h1>${strDrink}</h1>
-      <p><strong>Categoría:</strong> ${strCategory}</p>
-      <p><strong>Tipo:</strong> ${strAlcoholic}</p>
-      <p><strong>Instrucciones:</strong> ${strInstructions}</p>
+      <p>Categoría: ${strCategory}</p>
+      <p>Tipo: ${strAlcoholic}</p>
+      <p>Vaso: ${strGlass}</p>
+      <p>Ingredientes: ${strIngredient1}, ${strIngredient2}, ${strIngredient3}</p>
+      <p>Instrucciones: ${strInstructions}</p>
     `;
 
     contenedor.innerHTML = '';
