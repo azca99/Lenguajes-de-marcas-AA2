@@ -26,7 +26,6 @@ const printEquipos = (equipos) => {
 
   // Varios equipos (diferente deporte) con el mismo nombre
   equipos.forEach((equipo) => {
-    console.log('equipo --->', equipo);
 
     const {
       idTeam,
@@ -35,6 +34,9 @@ const printEquipos = (equipos) => {
       strCountry,
       strBadge
     } = equipo;
+
+    // Comprobar que cada equipo tiene su nombre e id
+    console.log('equipo --->', equipo, strTeam, idTeam);
 
     const card = document.createElement('div');
     card.classList.add('tarjeta');
@@ -45,12 +47,13 @@ const printEquipos = (equipos) => {
         alt="escudo de ${strTeam}"
         class="tarjeta-img"
       />
-      <h3 class="tarjeta-titulo">${strTeam}</h3>
+      <a href="equipo.html?id=${idTeam}" class="tarjeta-titulo clickable">${strTeam}</a>
       <p class="tarjeta-texto">ID: ${idTeam}</p>
       <p class="tarjeta-texto">Deporte: ${strSport}</p>
       <p class="tarjeta-texto">País: ${strCountry}</p>
     `;
 
+    console.log(card.innerHTML);
     listaEquipos.appendChild(card);
   });
 }

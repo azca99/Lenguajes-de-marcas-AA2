@@ -10,6 +10,15 @@ body {
     color: #228B22;
 }
 
+.clickable {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.clickable:hover {
+    text-decoration: underline;
+}
+
 .header {
     background-color: #9ACD32;
     color: aliceblue;

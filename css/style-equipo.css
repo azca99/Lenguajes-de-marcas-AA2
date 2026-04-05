@@ -1,0 +1,37 @@
+.titulo {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #228B22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.maxi-card {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.detalle-escudo {
+    width: 120px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.detalle-fondo {
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.detalle-descripcion {
+    margin-top: 20px;
+    line-height: 1.5;
+}
