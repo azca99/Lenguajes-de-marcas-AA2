@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: #3d0e34;
+    margin: 0;
+    padding: 0;
+}
+
+.clickable {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.clickable:hover {
+    text-decoration: underline;
+}
+
+.header {
+    background-color: #3d0e34;
+    color: aliceblue;
+    padding: 20px;
+    text-align: center;
+}
+
+.header-titulo {
+    margin-bottom: 10px;
+}
+
+.header-texto {
+    font-size: 16px;
+}
+
+.main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 20px auto;
+}
+
+.busqueda {
+    margin-bottom: 20px;
+}
+
+.busqueda-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #999999;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.bebidas-titulo {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.bebidas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.tarjeta {
+    background-color: white;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+.tarjeta-texto {
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.tarjeta-enlace {
+    display: inline-block;
+    margin-top: 10px;
+    color: beige;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.tarjeta-enlace:hover {
+    text-decoration: underline;
+}
+
+.tarjeta-img {
+    width: 100px;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tarjeta-titulo {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #470439;
+}
+
+.tarjeta-texto {
+    margin-bottom: 6px;
+}
+
+/* Para pantallas medianas */
+@media (max-width: 900px) {
+    .grid-bebidas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+    .grid-bebidas {
+        grid-template-columns: 1fr;
+    }
+}

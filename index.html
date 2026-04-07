@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/icono.png">
+    <title>Coctelpedia</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header-titulo">Explorador de Cócteles</h1>
+        <p class="header-texto">Consulta bebidas y detalles usando una API</p>
+    </header>
+
+    <main class="main">
+        <section class="busqueda">
+            <input type="text" id="buscador" class="busqueda-input" placeholder="Buscar bebidas">
+        </section>
+
+        <section class="bebidas">
+            <h2 class="bebidas-titulo">Listado de bebidas</h2>
+            <div id="contenedor-bebidas" class="bebidas-grid">
+                <!--Tarjetas con JavaScript-->
+            </div>
+        </section>
+    </main>
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
