@@ -1,11 +1,11 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    // Método para pintar 10 bebidas aleatorias al cargar la página
+    // Método para pintar 12 bebidas aleatorias al cargar la página
     const cargaInicial = async () => {
         const contenedor = document.getElementById('contenedor-bebidas');
         contenedor.innerHTML = '';
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 12; i++) {
         const url = `https://www.thecocktaildb.com/api/json/v1/1/random.php`;
         const result = await fetch(url);
         const data = await result.json();

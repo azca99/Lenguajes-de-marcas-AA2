@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-    background-color: #9ACD32;
+    background-color: #cb40af;
     color: aliceblue;
     padding: 20px;
     text-align: center;
@@ -51,6 +51,8 @@ body {
     border: 1px solid #999999;
     border-radius: 4px;
 }
+
+
 
 .bebidas-titulo {
     margin-bottom: 15px;
