@@ -47,9 +47,9 @@ window.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <img src="${strDrinkThumb}" class="tarjeta-img"/>
                 <a href="detalle.html?id=${idDrink}" class="tarjeta-titulo clickable">${strDrink}</a>
-                <p>Categoría: ${strCategory}</p>
-                <p>Vaso: ${strGlass}</p>
-                <p>Tipo: ${strAlcoholic}</p>
+                <p class ="tarjeta-texto">Categoría: ${strCategory}</p>
+                <p class="tarjeta-texto">Vaso: ${strGlass}</p>
+                <p class="tarjeta-texto">Tipo: ${strAlcoholic}</p>
             `;
 
             contenedor.appendChild(card);
