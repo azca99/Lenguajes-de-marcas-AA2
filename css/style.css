@@ -1,13 +1,13 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     background-color: antiquewhite;
-    color: #228B22;
+    color: #3d0e34;
+    margin: 0;
+    padding: 0;
 }
 
 .clickable {
@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-    background-color: #cb40af;
+    background-color: #3d0e34;
     color: aliceblue;
     padding: 20px;
     text-align: center;
@@ -50,12 +50,12 @@ body {
     font-size: 16px;
     border: 1px solid #999999;
     border-radius: 4px;
+    background-color: white;
 }
-
-
 
 .bebidas-titulo {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 .bebidas-grid {
@@ -69,15 +69,17 @@ body {
     border: 1px solid #cccccc;
     border-radius: 6px;
     padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.tarjeta-titulo {
-    margin-bottom: 10px;
-    color: skyblue;
+.tarjeta:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
 }
 
 .tarjeta-texto {
     margin-bottom: 6px;
+    font-size: 14px;
 }
 
 .tarjeta-enlace {
@@ -96,14 +98,33 @@ body {
     width: 100px;
     display: block;
     margin: 0 auto 10px auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .tarjeta-titulo {
-    margin-bottom: 10px;
-    color: #228B22;
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
     text-align: center;
+    margin-bottom: 10px;
+    color: #470439;
 }
 
 .tarjeta-texto {
     margin-bottom: 6px;
+}
+
+/* Para pantallas medianas */
+@media (max-width: 900px) {
+    .grid-bebidas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+    .grid-bebidas {
+        grid-template-columns: 1fr;
+    }
 }

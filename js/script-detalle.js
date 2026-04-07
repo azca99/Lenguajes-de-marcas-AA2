@@ -15,7 +15,23 @@ window.addEventListener('DOMContentLoaded', () => {
     getCocktail(id);
   }
 
+  const getIngredients = (cocktail) => {
+    let ingredientesHTML = '';
+
+    // Hasta 15 ingredientes
+    for (let i = 1; i <= 15; i++) {
+      let ingrediente = cocktail[`strIngredient${i}`];
+      let medida = cocktail[`strMeasure${i}`];
+
+      if (ingrediente && ingrediente.trim() !== '') {
+        ingredientesHTML += `<li>${medida ? medida : ''} ${ingrediente}</li>`;
+      }
+    }
+    return ingredientesHTML;
+  };
+
   const createDetail = (cocktail) => {
+    const ingredientesHTML = getIngredients(cocktail);
     const contenedor = document.querySelector('#bebida_detalle');
 
     const {
@@ -25,9 +41,8 @@ window.addEventListener('DOMContentLoaded', () => {
       strAlcoholic,
       strGlass,
       strInstructions,
-      strIngredient1,
-      strIngredient2,
-      strIngredient3,
+      strIBA,
+      strTags,
     } = cocktail;
 
     const card = document.createElement('div');
@@ -35,12 +50,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
     card.innerHTML = `
       <img src="${strDrinkThumb}" class="detalle-img"/>
-      <h1>${strDrink}</h1>
-      <p>Categoría: ${strCategory}</p>
-      <p>Tipo: ${strAlcoholic}</p>
-      <p>Vaso: ${strGlass}</p>
-      <p>Ingredientes: ${strIngredient1}, ${strIngredient2}, ${strIngredient3}</p>
-      <p>Instrucciones: ${strInstructions}</p>
+      <h1 class="maxi-card-titulo">${strDrink}</h1>
+      <p class="maxi-card-texto">Categoría: ${strCategory}</p>
+      <p class="maxi-card-texto">Tipo: ${strAlcoholic}</p>
+      <p class="maxi-card-texto">Vaso: ${strGlass}</p>
+      <p class="maxi-card-texto">Ingredientes:</p>
+      <ul class="maxi-card-ingredientes">${ingredientesHTML}</ul>
+      <p class="maxi-card-texto">Instrucciones: ${strInstructions}</p>
+      <p class="maxi-card-texto">IBA: ${strIBA ? strIBA : 'No'}</p>
+      <p class="maxi-card-texto">Tags: ${strTags ? strTags : '.'}</p>
     `;
 
     contenedor.innerHTML = '';
