@@ -39,7 +39,7 @@ body {
     font-size: 22px;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #470439;
+    color: #3d0e34;
     text-align: center;
 }
 
@@ -62,4 +62,53 @@ body {
     display: block;
     margin: 0 auto 20px auto;
     border-radius: 10px;
+}
+
+.relacionados-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.relacionado-card {
+    background-color: #f7f7f7;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.relacionado-img {
+    width: 100px;
+    display: block;
+    margin: 0 auto 10px auto;
+    border-radius: 8px;
+}
+
+.relacionado-nombre {
+    font-size: 14px;
+    color: #3d0e34;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.relacionado-nombre:hover {
+    text-decoration: underline;
+}
+
+.relacionados-box {
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: #f0f0f0;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#cocktails-relacionados {
+    margin-top: 60px;
 }
