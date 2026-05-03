@@ -59,9 +59,37 @@ window.addEventListener('DOMContentLoaded', () => {
       <p class="maxi-card-texto">Instrucciones: ${strInstructions}</p>
       <p class="maxi-card-texto">IBA: ${strIBA ? strIBA : 'No'}</p>
       <p class="maxi-card-texto">Tags: ${strTags ? strTags : '.'}</p>
+      <button id="btn-favorito" class="btn-favorito">Añadir a favoritos</button>
     `;
 
     contenedor.innerHTML = '';
     contenedor.appendChild(card);
+    // Botón de favorito
+    const botonFavorito = document.getElementById('btn-favorito');
+
+    // Añadir cocktail a favoritos
+    botonFavorito.addEventListener('click', async () => {
+      try {
+        const response = await fetch('http://localhost:3001/favoritos', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            id_cocktail: cocktail.idDrink,
+            nombre: cocktail.strDrink,
+            imagen: cocktail.strDrinkThumb,
+            alcoholico: cocktail.strAlcoholic,
+            comentario: ''
+          })
+        });
+
+        const data = await response.json();
+        alert(data.mensaje || 'Favorito añadido correctamente');
+      } catch (error) {
+        alert('Error al añadir a favoritos');
+        console.log(error);
+      }
+    });
   };
 });
